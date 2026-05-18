@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [master]
+    branches: [master,Getting-a-Build]
   pull_request:
-    branches: [master]
+    branches: [master,Getting-a-Build]
 
 jobs:
   build:
@@ -12,7 +12,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        #os: [windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-20.04]
         mode: [release, dev]
         go: ["1.14"]
 
